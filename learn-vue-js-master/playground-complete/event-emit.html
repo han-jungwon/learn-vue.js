@@ -8,9 +8,10 @@
 </head>
 <body>
   <div id="app">
+    <p>{{num}}</p>
 <!--    <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 메서드 이름"></app-header>-->
     <app-header v-on:pass="logText"></app-header>
-    <app-content v-bind:v-on:jungwon="logNum"></app-content>
+    <app-content v-on:increase="increaseNumber"></app-content>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -28,12 +29,12 @@
       template: '<button v-on:click="addNumber">add</button>',
       methods: {
         addNumber: function () {
-          this.$emit('jungwon');
+          this.$emit('increase');
         }
       }
     }
 
-    new Vue({
+    var vm = new Vue({
       el: '#app',
       components: {
         'app-header': appHeader,
@@ -43,8 +44,8 @@
         logText: function() {
           console.log('hi');
         },
-        logNum: function () {
-          console.log('11');
+        increaseNumber: function () {
+          this.num = this.num + 1;
         }
       },
       data: {
