@@ -8,8 +8,10 @@
 </head>
 <body>
   <div id="app">
+<!--    <button v-on:click="메서드이름">click me</button>-->
     <button v-on:click="logText">click me</button>
     <input type="text" v-on:keyup.enter="logText">
+<!--    v-on:keypress : 키보드를 누를때마다 이벤트 발생 -->
     <button>add</button>
   </div>
 

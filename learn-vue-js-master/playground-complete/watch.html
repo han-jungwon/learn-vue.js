@@ -20,18 +20,19 @@
         num: 10
       },
       watch: {
-        num: function() {
+        num: function () {
           this.logText();
         }
       },
       methods: {
-        addNum: function() {
+        addNum: function () {
           this.num = this.num + 1;
         },
-        logText: function() {
+        logText: function () {
           console.log('changed');
         }
       }
+
     })
   </script>
 </body>
